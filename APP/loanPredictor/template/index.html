@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Predictor</title>
+
+
+
+
+    <style>
+        .data_Collection {
+            padding-left: 100px;
+        }
+        
+        input[type=text],
+        select {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+            width: 80%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>{{a}}</h1>
+
+    <h1>Hi I am AI Loan Predictor</h1>
+    <h3>please fill this details:</h3>
+
+
+
+
+    <br>
+    <div class="data_Collection">
+        <form method="post" enctype="multipart/form-data" action="predictLoan">
+            {% csrf_token %}
+            <div class="col-md-4 col-sm-4"><label for="fname">Gender:</label> </div> <input name="GenderVal" type="text" value=1><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">Married:</label> </div> <input type="text" id="lname" name="MarriedVal" value=0><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">Education:</label> </div> <input type="text" id="lname" name="EducationVal" value=1><br><br>
+            <div class="col-md-4 col-sm-4"><label for="fname">Self_Employed:</label> </div> <input type="text" id="fname" name="Self_EmployedVal" value=0><br><br>
+
+            <div class="col-md-4 col-sm-4"><label for="lname">ApplicantIncome:</label> </div> <input type="text" id="lname" name="ApplicantIncomeVal" value=5849><br><br>
+            <div class="col-md-4 col-sm-4"><label for="fname">CoapplicantIncome:</label></div> <input type="text" id="fname" name="CoapplicantIncomeVal" value=0.0><br><br>
+
+            <div class="col-md-4 col-sm-4"><label for="lname">LoanAmount:</label> </div> <input type="text" id="lname" name="LoanAmountVal" value=146.412162><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">Loan_Amount_Term:</label> </div> <input type="text" id="lname" name="Loan_Amount_TermVal" value=360.0><br><br>
+
+            <div class="col-md-4 col-sm-4"><label for="lname">Credit_History:</label> </div> <input type="text" id="lname" name="Credit_HistoryVal" value=1.0><br><br>
+
+            <div class="col-md-4 col-sm-4"><label for="lname">Urban:</label> </div> <input type="text" id="lname" name="UrbanVal" value=0><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">Rural:</label> </div> <input type="text" id="lname" name="RuralVal" value=0><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">Semiurban:</label> </div> <input type="text" id="lname" name="SemiurbanVal" value=1><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">0:</label> </div> <input type="text" id="lname" name="zeroVal" value=1><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">1:</label> </div> <input type="text" id="lname" name="oneVal" value=0><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">2:</label> </div> <input type="text" id="lname" name="twoVal" value=0><br><br>
+            <div class="col-md-4 col-sm-4"><label for="lname">3+:</label> </div> <input type="text" id="lname" name="threeVal" value=0><br><br>
+            <br>
+            <input type="submit" value="Submit"></div>
+
+    <h1 style="padding-left: 400px;">Loan Status: {{scoreVal}}</h1>
+    </form>
+    </div>
+
+
+
+</body>
+
+</html>
